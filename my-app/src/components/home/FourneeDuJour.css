@@ -1,0 +1,44 @@
+.fournee {
+    background-color: #FAF6F0;
+    padding: 80px 64px;
+  }
+  
+  .fournee-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C9A876;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;  }
+  
+  .fournee-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 44px;
+    color: #2D2A26;
+    margin-bottom: 56px;
+    font-weight:300;
+    letter-spacing:2px ;
+    text-align: center;
+  }
+  
+  .fournee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+
+  @media (max-width: 1000px) {
+    .fournee-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .fournee-grid {
+      grid-template-columns: 1fr;
+    }
+  }

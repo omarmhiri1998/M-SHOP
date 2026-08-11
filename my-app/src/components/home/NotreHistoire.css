@@ -1,0 +1,26 @@
+.histoire {
+  background-color: #F5F0E8;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.histoire-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 38px;
+  color: #2D2A26;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+}
+
+.histoire-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #7A6A5D;
+  max-width: 700px;
+  margin: 0 auto;
+}

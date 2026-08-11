@@ -1,0 +1,51 @@
+.collections {
+    background-color: #F5F0E8;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .collections-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 42px;
+    color: #2D2A26;
+    margin-bottom: 16px;
+    font-weight:400;
+    letter-spacing:1px ; 
+  }
+  
+  .collections-underline {
+    width: 100px;
+    height: 1px;
+    background-color: #C9A876;
+    margin: 0 auto 60px auto;
+  }
+  
+  .collections-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+  
+  .collection-item {
+    max-width: 280px;
+  }
+  
+  .collection-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #6B4E3D;
+    margin-bottom: 16px;
+    font-weight:400;
+    letter-spacing:1px ;
+  }
+  
+  .collection-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #7A6A5D;
+    line-height: 1.6;
+    
+  }

@@ -1,17 +1,8 @@
-import Navbar from "./components/navbar/Navbar";
-import Header from "./components/header/Header";
-import Main from "./components/main/Main";
-import Footer from "./components/footer/Footer";
-import "./App.css";
+import Home from './pages/Home';
+import './styles/global.css';
+
 function App() {
-  return (
-    <div className="app">
-      <Navbar />
-      <Header />
-      <Main />
-      <Footer />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
