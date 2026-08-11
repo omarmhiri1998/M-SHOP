@@ -1,3 +1,7 @@
+/* =========================
+          NAVBAR
+========================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -11,152 +15,346 @@
 
   padding: 0 5%;
 
-  background: rgba(45, 30, 20, 0.12);
+  background: rgba(55, 38, 27, 0.10);
 
   z-index: 1000;
 
   transition:
     background 0.4s ease,
-    backdrop-filter 0.4s ease;
+    backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 
-/* عند Scroll */
+/* =========================
+          SCROLL
+========================= */
 
 .navbar-scrolled {
-  background: rgba(65, 43, 30, 0.32);
+  background: rgba(65, 45, 32, 0.32);
+
   backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 
-/* Left / Right */
+/* =========================
+       LEFT / RIGHT
+========================= */
 
 .nav-left,
 .nav-right {
   display: flex;
   align-items: center;
 
-  gap: 30px;
+  gap: 34px;
 }
-
-
-/* Links */
-
-.navbar a {
-  text-decoration: none;
-}
-
-.nav-left a,
-.nav-right > a {
-  color: #fffaf4;
-
-  font-size: 15px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1.8px;
-
-  white-space: nowrap;
-
-  transition: opacity 0.3s ease;
-}
-
-.nav-left a:hover,
-.nav-right > a:hover {
-  opacity: 0.65;
-}
-
-
-/* =========================
-        LOGO AREA
-========================= */
-
-.logo {
-  position: absolute;
-
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 190px;
-  height: 65px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* مؤقت إلى أن تضع الصورة */
-
-.logo span {
-  color: #fffaf4;
-
-  font-size: 22px;
-  font-weight: 400;
-
-  letter-spacing: 5px;
-}
-
-
-/* عندما تضع صورة Logo */
-
-.logo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-}
-
-
-/* Right */
 
 .nav-right {
   margin-left: auto;
 }
 
 
-/* Search */
+/* =========================
+          LINKS
+========================= */
 
-.search {
-  width: 190px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 25px;
-
-  background: rgba(255, 255, 255, 0.10);
-
-  overflow: hidden;
-}
-
-.search input {
-  flex: 1;
-  min-width: 0;
-
-  padding-left: 15px;
-
-  border: none;
-  outline: none;
-
-  background: transparent;
+.nav-left > a,
+.categories-button,
+.login {
+  position: relative;
 
   color: #fffaf4;
 
   font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.3s ease,
+    color 0.3s ease;
 }
 
-.search input::placeholder {
-  color: rgba(255, 250, 244, 0.8);
+
+/* خط صغير عند hover */
+
+.nav-left > a::after,
+.login::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #fffaf4;
+
+  transition: width 0.3s ease;
 }
 
-.search button {
-  height: 100%;
+.nav-left > a:hover::after,
+.login:hover::after {
+  width: 100%;
+}
 
-  padding: 0 14px;
+
+/* =========================
+         CATEGORIES
+========================= */
+
+.categories-wrapper {
+  position: relative;
+}
+
+.categories-button {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.categories-button:hover {
+  opacity: 0.75;
+}
+
+
+/* Arrow */
+
+.category-arrow {
+  display: inline-block;
+
+  font-size: 11px;
+
+  transition: transform 0.3s ease;
+}
+
+.arrow-open {
+  transform: rotate(180deg);
+}
+
+
+/* =========================
+      DROPDOWN MENU
+========================= */
+
+.categories-menu {
+  position: absolute;
+
+  top: 36px;
+  left: 0;
+
+  width: 190px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 0;
+
+  background: rgba(65, 47, 36, 0.78);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 12px 30px rgba(25, 15, 10, 0.16);
+}
+
+
+/* small top line */
+
+.categories-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 18px;
+
+  width: 35px;
+  height: 1px;
+
+  background: rgba(255, 250, 244, 0.7);
+}
+
+
+.categories-menu a {
+  padding: 12px 18px;
+
+  color: rgba(255, 250, 244, 0.88);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+
+.categories-menu a:hover {
+  padding-left: 23px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+            LOGO
+========================= */
+
+.logo {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #fffaf4;
+
+  font-family: "Times New Roman", Georgia, serif;
+
+  font-size: 21px;
+  font-weight: 400;
+
+  letter-spacing: 6px;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
+
+/* =========================
+           LOGIN
+========================= */
+
+.login {
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.login:hover {
+  opacity: 0.8;
+}
+
+
+/* =========================
+          SEARCH
+========================= */
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* hidden */
+
+.search-box {
+  width: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transition:
+    width 0.35s ease,
+    opacity 0.3s ease;
+}
+
+
+/* opened */
+
+.search-box-open {
+  width: 210px;
+
+  opacity: 1;
+}
+
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(255, 250, 244, 0.45);
+
+  border-radius: 25px;
+
+  outline: none;
+
+  background: rgba(40, 28, 20, 0.22);
+
+  color: #fffaf4;
+
+  font-size: 14px;
+
+  backdrop-filter: blur(10px);
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 250, 244, 0.72);
+}
+
+
+/* =========================
+        SEARCH ICON
+========================= */
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
 
   border: none;
 
@@ -164,35 +362,30 @@
 
   color: #fffaf4;
 
-  font-size: 20px;
-
   cursor: pointer;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 
-/* Login */
+.search-icon svg {
+  width: 20px;
+  height: 20px;
 
-.login {
-  padding: 11px 24px;
+  fill: none;
 
-  border: none;
-  border-radius: 25px;
+  stroke: currentColor;
 
-  background: #fffaf4;
+  stroke-width: 1.7;
 
-  color: #6b4d3c;
-
-  font-size: 13px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
+  stroke-linecap: round;
 }
 
-.login:hover {
-  background: #ead8c7;
+
+.search-icon:hover {
+  opacity: 0.65;
+
+  transform: scale(1.08);
 }

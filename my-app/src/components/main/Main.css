@@ -1,12 +1,14 @@
 .main {
   width: 100%;
+
   background: #f8f3eb;
+
   color: #5b4032;
 }
 
 
 /* ==================================
-          COMMON TITLES
+          COMMON
 ================================== */
 
 .section-label {
@@ -145,6 +147,7 @@
 
 .category-item button:hover {
   color: #c28d62;
+
   border-color: #c28d62;
 }
 
@@ -186,6 +189,7 @@
   padding: 12px 25px;
 
   border: 1px solid #c49c7b;
+
   border-radius: 30px;
 
   background: transparent;
@@ -225,8 +229,6 @@
 }
 
 
-/* ليست Card مغلقة */
-
 .product {
   display: flex;
   flex-direction: column;
@@ -258,7 +260,8 @@
 }
 
 
-.product:hover .product-image img {
+.product:hover .product-image img,
+.seasonal-product:hover .product-image img {
   transform: scale(1.04);
 }
 
@@ -277,7 +280,8 @@
 }
 
 
-.product h3 {
+.product h3,
+.seasonal-product h3 {
   margin-bottom: 20px;
 
   font-family: Georgia, "Times New Roman", serif;
@@ -307,12 +311,15 @@
 }
 
 
-/* ADD BUTTON */
+/* ==================================
+          ADD BUTTON
+================================== */
 
 .add-button {
   padding: 10px 24px;
 
   border: 1px solid #c39e80;
+
   border-radius: 30px;
 
   background: transparent;
@@ -342,6 +349,131 @@
 
 
 /* ==================================
+          SEASONAL
+================================== */
+
+.seasonal {
+  padding: 100px 7% 120px;
+
+  background: #faf6ef;
+}
+
+
+.seasonal-header {
+  margin-bottom: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.seasonal-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+  font-weight: 400;
+  font-style: italic;
+
+  color: #513729;
+}
+
+
+/* ==================================
+       SEASONAL CONTROLS
+================================== */
+
+.seasonal-controls {
+  display: flex;
+
+  gap: 12px;
+}
+
+
+.seasonal-arrow {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #c39e80;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #654838;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.seasonal-arrow:hover {
+  background: #d8ae78;
+
+  border-color: #d8ae78;
+
+  transform: translateY(-2px);
+}
+
+
+/* ==================================
+       SEASONAL SLIDER
+================================== */
+
+.seasonal-slider {
+  width: 100%;
+
+  display: flex;
+
+  gap: 30px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #c8a98c transparent;
+
+  padding-bottom: 25px;
+}
+
+
+.seasonal-slider::-webkit-scrollbar {
+  height: 5px;
+}
+
+
+.seasonal-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.seasonal-slider::-webkit-scrollbar-thumb {
+  background: #c8a98c;
+
+  border-radius: 10px;
+}
+
+
+/* Seasonal Product */
+
+.seasonal-product {
+  flex: 0 0 calc((100% - 90px) / 4);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ==================================
           TRADITION
 ================================== */
 
@@ -350,7 +482,7 @@
 
   text-align: center;
 
-  background: #faf6ef;
+  background: #f6ede3;
 }
 
 
@@ -415,6 +547,49 @@
 
 
 /* ==================================
+          OUR STORY
+================================== */
+
+.our-story {
+  width: 100%;
+
+  padding: 90px 12%;
+
+  text-align: center;
+
+  background: #f8f3eb;
+}
+
+
+.our-story h2 {
+  margin-bottom: 30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+  font-weight: 400;
+  font-style: italic;
+
+  color: #513729;
+}
+
+
+.our-story p {
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  color: #876f60;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* ==================================
           RESPONSIVE
 ================================== */
 
@@ -432,6 +607,10 @@
     border-right: none;
   }
 
+
+  .seasonal-product {
+    flex: 0 0 calc((100% - 30px) / 2);
+  }
 }
 
 
@@ -439,7 +618,9 @@
 
   .shop-categories,
   .favorites,
-  .tradition {
+  .seasonal,
+  .tradition,
+  .our-story {
     padding: 70px 6%;
   }
 
@@ -451,11 +632,24 @@
   }
 
 
-  .favorites-header {
+  .favorites-header,
+  .seasonal-header {
     align-items: flex-start;
+
     flex-direction: column;
 
     gap: 25px;
+  }
+
+
+  .seasonal-product {
+    flex: 0 0 85%;
+  }
+
+
+  .seasonal-arrow {
+    width: 44px;
+    height: 44px;
   }
 
 
@@ -472,4 +666,15 @@
     border-bottom: none;
   }
 
+
+  .our-story h2 {
+    font-size: 38px;
+  }
+
+
+  .our-story p {
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
 }
