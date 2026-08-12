@@ -10,7 +10,7 @@ export const products = [
     name: 'Double Chocolat',
     description: 'Chocolat noir 70%, fleur de sel',
     price: '3.50',
-    image: cookieOat,
+    image: cookieClassic,
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const products = [
     name: 'Avoine & Raisin',
     description: 'Avoine complète, cannelle douce',
     price: '3.20',
-    image: cookieClassic,
+    image: cookieOat,
   },
   {
     id: 4,
