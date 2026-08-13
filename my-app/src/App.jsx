@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cookies from "./pages/Cookies";
+import Macarons from "./pages/Macarons";
 import "./App.css";
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/inscription" element={<Register />} />
         <Route path="/boutique/cookies" element={<Cookies />} />
+        <Route path="/boutique/macarons" element={<Macarons />} />
       </Routes>
 
       <Footer />
