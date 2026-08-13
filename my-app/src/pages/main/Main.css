@@ -159,7 +159,7 @@
 .favorites {
   padding: 100px 7% 120px;
 
-  background: #f1e6d8;
+  background-color: #F5F0E8;
 }
 
 
@@ -482,7 +482,7 @@
 
   text-align: center;
 
-  background: #f6ede3;
+  background-color: #F5F0E8;
 }
 
 
@@ -557,7 +557,7 @@
 
   text-align: center;
 
-  background: #f8f3eb;
+  background-color: #F5F0E8;
 }
 
 
@@ -575,17 +575,13 @@
 
 
 .our-story p {
-  max-width: 950px;
-
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #8d715f;
+  max-width: 700px;
   margin: 0 auto;
-
-  color: #876f60;
-
-  font-size: 18px;
-
-  line-height: 1.9;
-
-  letter-spacing: 0.3px;
 }
 
 

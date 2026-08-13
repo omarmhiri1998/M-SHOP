@@ -42,24 +42,11 @@ function Main({ onAdd }) {
 
         <div className="categories-grid">
 
+       
+
+
           <div className="category-item">
             <span className="category-number">01</span>
-
-            <h3>Drinks</h3>
-
-            <p>
-              Refreshing drinks selected to accompany
-              your favorite sweets.
-            </p>
-
-            <button>
-              Explore
-            </button>
-          </div>
-
-
-          <div className="category-item">
-            <span className="category-number">02</span>
 
             <h3>Cookies</h3>
 
@@ -75,7 +62,7 @@ function Main({ onAdd }) {
 
 
           <div className="category-item">
-            <span className="category-number">03</span>
+            <span className="category-number">02</span>
 
             <h3>Macarons</h3>
 
@@ -91,13 +78,27 @@ function Main({ onAdd }) {
 
 
           <div className="category-item">
-            <span className="category-number">04</span>
+            <span className="category-number">03</span>
 
             <h3>Tunisian Sweets</h3>
 
             <p>
               Traditional recipes inspired by
               authentic Tunisian pastry.
+            </p>
+
+            <button>
+              Explore
+            </button>
+          </div>
+          <div className="category-item">
+            <span className="category-number">04</span>
+
+            <h3>Drinks</h3>
+
+            <p>
+              Refreshing drinks selected to accompany
+              your favorite sweets.
             </p>
 
             <button>

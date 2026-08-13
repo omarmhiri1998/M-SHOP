@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -53,10 +54,9 @@ function Navbar() {
       {/* LEFT */}
       <div className="nav-left">
 
-        <a href="#">
+      <Link to="/">
           Home
-        </a>
-
+        </Link>
         <div
           className="categories-wrapper"
           ref={categoriesRef}
@@ -66,7 +66,7 @@ function Navbar() {
             className="categories-button"
             onClick={toggleCategories}
           >
-            Categories
+            Boutique
 
             <span
               className={`category-arrow ${
@@ -80,52 +80,58 @@ function Navbar() {
           {categoriesOpen && (
             <div className="categories-menu">
 
-              <a href="#">
+             <Link to="/boutique/cookies">
                 Cookies
-              </a>
+              </Link>
 
-              <a href="#">
+              <Link to="/boutique/macarons">
                 Macarons
-              </a>
+              </Link>
 
-              <a href="#">
+              <Link to="/boutique/tunisian-sweets">
                 Tunisian Sweets
-              </a>
+              </Link>
 
-              <a href="#">
+              <Link to="/boutique/drinks">
                 Drinks
-              </a>
+              </Link>
 
             </div>
           )}
 
         </div>
-
-        <a href="#">
+        <Link
+          to="/contact"
+          className="login"
+        >
+          Contact
+        </Link>
+        <Link to="/gifting">
           Gifting
-        </a>
+        </Link>
 
       </div>
 
 
       {/* LOGO */}
-      <a
-        href="#"
+      <Link
+        to="/"
         className="logo"
       >
         Sweet Surrender
-      </a>
+      </Link>
 
 
       {/* RIGHT */}
       <div className="nav-right">
+      
 
-        <a
-          href="#"
+      <Link
+          to="/login"
           className="login"
         >
           Login
-        </a>
+        </Link>
 
 
         <div className="search-wrapper">
