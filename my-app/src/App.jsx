@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
-import Main from "./components/main/Main";
+import Main from "./pages/main/Main";
 import Footer from "./components/footer/Footer";
 import CartButton from "./components/cart/CartButton";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./App.css";
 
 
@@ -31,6 +32,7 @@ function App() {
         />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/inscription" element={<Register />} />
       </Routes>
 
       <Footer />

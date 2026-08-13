@@ -60,7 +60,7 @@ function Footer() {
 
       <div className="footer-bottom">
 
-        <p>
+        <p className="p">
           © 2026 Sweet Surrender. All rights reserved.
         </p>
 
