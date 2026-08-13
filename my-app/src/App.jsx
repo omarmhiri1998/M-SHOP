@@ -9,6 +9,7 @@ import CartButton from "./components/cart/CartButton";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Cookies from "./pages/Cookies";
 import "./App.css";
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/inscription" element={<Register />} />
+        <Route path="/boutique/cookies" element={<Cookies />} />
       </Routes>
 
       <Footer />
