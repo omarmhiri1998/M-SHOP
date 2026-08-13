@@ -48,7 +48,7 @@ function Macarons() {
 
             <div className="macaron-footer">
               <span className="macaron-price">{macaron.price} €</span>
-              <button className="macaron-add">AJOUTER</button>
+              <button className="macaron-add">ADD</button>
             </div>
           </div>
         ))}
