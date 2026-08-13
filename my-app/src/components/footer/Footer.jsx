@@ -19,20 +19,20 @@ function Footer() {
         <div className="footer-section">
           <h3>Explore</h3>
 
-          <a href="#">Home</a>
-          <a href="#">Drinks</a>
-          <a href="#">Cookies</a>
-          <a href="#">Macarons</a>
+          <a href="/">Home</a>
+          <a href="/">Drinks</a>
+          <a href="/">Cookies</a>
+          <a href="/">Macarons</a>
         </div>
 
 
         <div className="footer-section">
           <h3>Our Sweets</h3>
 
-          <a href="#">Tunisian Sweets</a>
-          <a href="#">New Arrivals</a>
-          <a href="#">Best Sellers</a>
-          <a href="#">Gift Boxes</a>
+          <a href="/">Tunisian Sweets</a>
+          <a href="/">New Arrivals</a>
+          <a href="/">Best Sellers</a>
+          <a href="/">Gift Boxes</a>
         </div>
 
 
@@ -65,9 +65,9 @@ function Footer() {
         </p>
 
         <div className="footer-social">
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">Pinterest</a>
+          <a href="/">Instagram</a>
+          <a href="/">Facebook</a>
+          <a href="/">Pinterest</a>
         </div>
 
       </div>

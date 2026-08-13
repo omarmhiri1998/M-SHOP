@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: 75vh;
+  height:100vh;
 
   position: relative;
 
@@ -10,10 +10,9 @@
 
   background-image:
     linear-gradient(
-      rgba(45, 28, 18, 0.22),
-      rgba(45, 28, 18, 0.30)
+      rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)
     ),
-    url("../../assets/header.jpeg");
+    url("../../assets/cookies-macarons-landing.png");
 
   background-size: cover;
   background-position: center;
@@ -79,38 +78,21 @@
 ========================= */
 
 .header-button {
-  min-width: 220px;
-
-  padding: 18px 46px;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  border-radius: 35px;
-
-  background: #ead1ad;
-
-  color: #4b3324;
-
-  font-size: 15px;
-  font-weight: 600;
-
+  background: #E8DCC8;
+  color: #2D2A26;
+  border: none;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
   text-transform: uppercase;
-
-  letter-spacing: 3px;
-
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
   cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background 0.3s;
+  
 }
 
 
 .header-button:hover {
-  background: #f3ddbd;
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(70, 45, 30, 0.18);
+  background: #DDD0BC;
 }
