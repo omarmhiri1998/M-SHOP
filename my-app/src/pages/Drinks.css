@@ -1,0 +1,164 @@
+.drinks-page {
+    padding: 180px 7% 100px;
+  }
+  
+  .drinks-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+  }
+  
+  .drinks-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C9A876;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .drinks-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 46px;
+    color: #2D2A26;
+    margin-bottom: 18px;
+  }
+  
+  .drinks-intro {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #7A6A5D;
+  }
+  
+  
+
+  
+  .drinks-filters {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  
+  .filter-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A6A5D;
+    background: transparent;
+    border: 1px solid #E3D9C9;
+    border-radius: 999px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: 0.25s ease;
+  }
+  
+  .filter-btn:hover {
+    border-color: #C9A876;
+    color: #2D2A26;
+  }
+  
+  .filter-active {
+    background-color: #2D2A26;
+    border-color: #2D2A26;
+    color: #FAF6F0;
+  }
+  
+  
+
+  
+  .drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  @media (max-width: 1000px) {
+    .drinks-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .drinks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  
+  .drink-card {
+    text-align: left;
+  }
+  
+  .drink-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 22px;
+  }
+  
+  .drink-category {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C9A876;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .drink-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 21px;
+    color: #2D2A26;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  
+  .drink-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #7A6A5D;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .drink-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .drink-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #2D2A26;
+  }
+  
+  .drink-add {
+    font-family: 'Inter', sans-serif;
+    background-color: transparent;
+    border: 1px solid #2D2A26;
+    color: #2D2A26;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .drink-add:hover {
+    background-color: #2D2A26;
+    color: #FAF6F0;
+  }

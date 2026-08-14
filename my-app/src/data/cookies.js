@@ -54,4 +54,9 @@ export const cookies = [
     price: '18.00',
     image: coffretCookies,
   },
+
+
+
+
+
 ];
