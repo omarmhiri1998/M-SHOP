@@ -38,16 +38,19 @@ function Footer() {
               <Link to="/boutique/drinks">
                 Drinks
               </Link>
+              <Link to="/gifting">
+                Gifting</Link>
+              
         </div>
 
 
         <div className="footer-section">
-          <h3>Our Sweets</h3>
+          <h3>Our Sweets </h3>
 
-          <a href="/">Tunisian Sweets</a>
-          <a href="/">New Arrivals</a>
-          <a href="/">Best Sellers</a>
-          <a href="/">Gift Boxes</a>
+          <a href="/">Delicate</a>
+          <a href="/">Fresh</a>
+          <a href="/">Refined</a>
+          <a href="/">Authentic</a>
         </div>
 
 

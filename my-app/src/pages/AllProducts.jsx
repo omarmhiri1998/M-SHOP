@@ -6,8 +6,7 @@ import { drinks } from '../data/drinks';
 import { giftingItems } from '../data/gifting';
 import './AllProducts.css';
 
-// On fusionne toutes les collections en un seul tableau,
-// en ajoutant un champ "type" pour pouvoir filtrer par famille de produit
+
 const allProducts = [
   ...cookies.map((item) => ({ ...item, type: 'Cookies' })),
   ...macarons.map((item) => ({ ...item, type: 'Macarons' })),

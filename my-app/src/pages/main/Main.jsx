@@ -60,7 +60,7 @@ function Main({ onAdd }) {
             </p>
 
             <Link to="/boutique/cookies" >
-            Explor
+            Explore
               </Link>
           </div>
 
@@ -76,7 +76,7 @@ function Main({ onAdd }) {
             </p>
 
             <Link to="/boutique/macarons" >
-                Explor
+                Explore
               </Link>
           </div>
 
@@ -93,7 +93,7 @@ function Main({ onAdd }) {
 
 
               <Link to="/boutique/tunisian-sweets">
-              Explor
+              Explore
               </Link>
 
               
@@ -109,7 +109,7 @@ function Main({ onAdd }) {
             </p>
 
             <Link to="/boutique/drinks" >
-            Explor
+            Explore
               </Link>
           </div>
 
