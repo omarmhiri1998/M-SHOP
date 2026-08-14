@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; 
 import "./Navbar.css";
 
 function Navbar() {
@@ -8,6 +8,11 @@ function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const categoriesRef = useRef(null);
+
+  const location = useLocation();
+
+  
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     function handleScroll() {
@@ -48,15 +53,20 @@ function Navbar() {
     setCategoriesOpen(false);
   }
 
+  
+  const showSolid = !isHome || scrolled;
+
   return (
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+   
+    <nav className={`navbar ${showSolid ? "navbar-scrolled" : ""}`}>
 
       {/* LEFT */}
       <div className="nav-left">
 
-      <Link to="/">
+        <Link to="/">
           Home
         </Link>
+
         <div
           className="categories-wrapper"
           ref={categoriesRef}
@@ -79,8 +89,10 @@ function Navbar() {
 
           {categoriesOpen && (
             <div className="categories-menu">
+              <Link to="/boutique">All Products
+              </Link>
 
-             <Link to="/boutique/cookies">
+              <Link to="/boutique/cookies">
                 Cookies
               </Link>
 
@@ -95,6 +107,7 @@ function Navbar() {
               <Link to="/boutique/drinks">
                 Drinks
               </Link>
+            
 
             </div>
           )}
@@ -124,9 +137,9 @@ function Navbar() {
 
       {/* RIGHT */}
       <div className="nav-right">
-      
 
-      <Link
+
+        <Link
           to="/login"
           className="login"
         >
