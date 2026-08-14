@@ -1,0 +1,557 @@
+/* =================================
+   PAY PAGE
+================================= */
+
+.pay-page {
+  min-height: 100vh;
+
+  padding: 120px 8% 80px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 360px;
+
+  gap: 70px;
+
+  background: #f7f2e9;
+
+  color: #5b3d2b;
+}
+
+
+/* =================================
+   LOGIN MESSAGE
+================================= */
+
+.pay-message {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f7f2e9;
+
+  color: #5b3d2b;
+}
+
+
+/* =================================
+   CART
+================================= */
+
+.pay-page .pay-products {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.pay-page .pay-products h1 {
+  margin: 0 0 30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 46px;
+  font-style: italic;
+  font-weight: 500;
+
+  color: #5b3d2b;
+}
+
+
+/* =================================
+   PAYMENT METHOD
+================================= */
+
+.pay-page .payment-method {
+  margin-bottom: 40px;
+
+  padding: 25px;
+
+  background: #efe5d8;
+
+  border: 1px solid #dfd2c2;
+
+  border-radius: 5px;
+}
+
+.pay-page .payment-method h3 {
+  margin: 0 0 20px;
+
+  color: #5b3d2b;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.pay-page .payment-options {
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+.pay-page .payment-option {
+  min-width: 125px;
+
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #dfd2c2;
+
+  background: #fffaf4;
+
+  color: #5b3d2b;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.pay-page .payment-option:hover {
+  border-color: #d9aa68;
+
+  background: #f9eedf;
+}
+
+.pay-page .payment-option input {
+  display: none;
+}
+
+.pay-page .active-payment {
+  border-color: #d9aa68;
+
+  background: #f4e4cc;
+}
+
+.pay-page .payment-icon {
+  font-size: 18px;
+}
+
+.pay-page .paypal-text {
+  font-weight: 600;
+
+  color: #5b3d2b;
+}
+
+
+/* =================================
+   CART PRODUCT
+================================= */
+
+.pay-page .pay-product {
+  display: grid;
+
+  grid-template-columns: 125px 1fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid #dfd2c2;
+}
+
+
+/* مهم:
+   هذا الآن يؤثر فقط على Pay
+*/
+
+.pay-page .product-image {
+  width: 125px;
+  height: 125px;
+
+  margin: 0;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  background: #e8d9ca;
+}
+
+.pay-page .product-info h3 {
+  margin: 0 0 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  color: #5b3d2b;
+}
+
+.pay-page .product-price {
+  margin: 0 0 16px;
+
+  color: #8f7766;
+
+  font-size: 15px;
+}
+
+
+/* =================================
+   QUANTITY
+================================= */
+
+.pay-page .quantity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.pay-page .quantity button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d5c4b3;
+
+  background: #fffaf4;
+
+  color: #5b3d2b;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.pay-page .quantity button:hover {
+  background: #efe5d8;
+
+  border-color: #d9aa68;
+}
+
+.pay-page .quantity span {
+  min-width: 20px;
+
+  text-align: center;
+
+  color: #5b3d2b;
+
+  font-weight: 600;
+}
+
+
+/* =================================
+   DELETE
+================================= */
+
+.pay-page .delete-button {
+  margin-top: 14px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #9b6554;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
+.pay-page .delete-button:hover {
+  color: #743f30;
+}
+
+
+/* =================================
+   PRODUCT TOTAL
+================================= */
+
+.pay-page .product-total {
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #5b3d2b;
+
+  font-size: 19px;
+  font-weight: 500;
+}
+
+
+/* =================================
+   SUMMARY
+================================= */
+
+.pay-page .pay-summary {
+  grid-column: 2;
+  grid-row: 1;
+
+  height: fit-content;
+
+  padding: 35px;
+
+  background: #efe5d8;
+
+  border: 1px solid #dfd2c2;
+
+  border-radius: 5px;
+}
+
+.pay-page .pay-summary h2 {
+  margin: 0 0 30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 29px;
+  font-weight: 500;
+
+  color: #5b3d2b;
+}
+
+
+/* =================================
+   SUBTOTAL
+================================= */
+
+.pay-page .summary-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  color: #8f7766;
+
+  font-size: 15px;
+}
+
+
+/* =================================
+   DELIVERY
+================================= */
+
+.pay-page .delivery-option {
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px 0;
+
+  border-top: 1px solid #dfd2c2;
+
+  cursor: pointer;
+}
+
+.pay-page .delivery-option input {
+  accent-color: #bd8c4f;
+
+  cursor: pointer;
+}
+
+.pay-page .delivery-option strong {
+  display: block;
+
+  color: #5b3d2b;
+
+  font-size: 14px;
+}
+
+.pay-page .delivery-option p {
+  margin: 4px 0 0;
+
+  color: #9a8576;
+
+  font-size: 11px;
+}
+
+.pay-page .delivery-option > span {
+  color: #5b3d2b;
+
+  font-size: 13px;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.pay-page .summary-line {
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #d8c6b4;
+}
+
+
+/* =================================
+   TOTAL
+================================= */
+
+.pay-page .summary-total {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #5b3d2b;
+
+  font-size: 23px;
+}
+
+.pay-page .summary-total strong {
+  font-size: 24px;
+}
+
+
+/* =================================
+   PAY BUTTON
+================================= */
+
+.pay-page .pay-button {
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #d9aa68;
+
+  color: #5b3d2b;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.pay-page .pay-button:hover {
+  background: #bd8c4f;
+
+  color: white;
+}
+
+
+/* =================================
+   EMPTY CART
+================================= */
+
+.pay-page .empty-cart {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: #8f7766;
+
+  background: #efe5d8;
+
+  border: 1px solid #dfd2c2;
+}
+
+.pay-page .empty-cart h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-weight: 500;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 950px) {
+  .pay-page {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 100px 7% 70px;
+  }
+
+  .pay-page .pay-products {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .pay-page .pay-summary {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .pay-page {
+    padding: 80px 5% 60px;
+
+    gap: 35px;
+  }
+
+  .pay-page .pay-products h1 {
+    font-size: 36px;
+  }
+
+  .pay-page .payment-options {
+    flex-direction: column;
+  }
+
+  .pay-page .payment-option {
+    width: 100%;
+  }
+
+  .pay-page .pay-product {
+    grid-template-columns: 90px 1fr;
+
+    gap: 18px;
+  }
+
+  .pay-page .product-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .pay-page .product-info h3 {
+    font-size: 18px;
+  }
+
+  .pay-page .product-total {
+    grid-column: 2;
+
+    margin-top: 5px;
+  }
+
+  .pay-page .pay-summary {
+    padding: 25px;
+  }
+}

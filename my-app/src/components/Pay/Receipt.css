@@ -1,0 +1,269 @@
+.receipt-page {
+  min-height: 100vh;
+
+  padding: 130px 20px 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background: #f8f3eb;
+
+  color: #2d2a26;
+}
+
+
+.receipt-box {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 50px;
+
+  background: #fffdf9;
+
+  border: 1px solid
+    rgba(45, 42, 38, 0.12);
+
+  text-align: center;
+}
+
+
+.receipt-success {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #c9a876;
+
+  color: white;
+
+  font-size: 32px;
+}
+
+
+.receipt-label {
+  margin-bottom: 12px;
+
+  color: #c9a876;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.receipt-box h1 {
+  margin: 0 0 15px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 44px;
+  font-weight: 400;
+}
+
+
+.receipt-message {
+  margin-bottom: 40px;
+
+  color: #7a6a5d;
+
+  font-size: 15px;
+}
+
+
+.receipt-info {
+  margin-bottom: 35px;
+
+  padding: 25px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 25px;
+
+  border-top:
+    1px solid #e2d8cc;
+
+  border-bottom:
+    1px solid #e2d8cc;
+
+  text-align: left;
+}
+
+
+.receipt-info div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.receipt-info span {
+  color: #99877a;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+.receipt-info strong {
+  font-size: 14px;
+}
+
+
+.receipt-products {
+  margin-bottom: 30px;
+
+  text-align: left;
+}
+
+
+.receipt-products h2 {
+  margin-bottom: 20px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 26px;
+  font-weight: 400;
+}
+
+
+.receipt-product {
+  padding: 14px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom:
+    1px solid #eee5dc;
+}
+
+
+.receipt-product div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.receipt-product strong {
+  font-size: 14px;
+}
+
+
+.receipt-product div span {
+  color: #9a887b;
+
+  font-size: 12px;
+}
+
+
+.receipt-prices {
+  margin-bottom: 35px;
+
+  padding-top: 10px;
+}
+
+
+.receipt-prices > div {
+  padding: 9px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #76685f;
+
+  font-size: 14px;
+}
+
+
+.receipt-prices .receipt-total {
+  margin-top: 10px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid #cfc0b2;
+
+  color: #2d2a26;
+
+  font-size: 19px;
+}
+
+
+.receipt-home {
+  display: inline-block;
+
+  padding: 13px 28px;
+
+  border: 1px solid #2d2a26;
+
+  border-radius: 999px;
+
+  color: #2d2a26;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  transition: 0.25s;
+}
+
+
+.receipt-home:hover {
+  background: #2d2a26;
+
+  color: white;
+}
+
+
+@media (max-width: 600px) {
+
+  .receipt-page {
+    padding:
+      100px 15px 60px;
+  }
+
+
+  .receipt-box {
+    padding: 35px 22px;
+  }
+
+
+  .receipt-box h1 {
+    font-size: 36px;
+  }
+
+
+  .receipt-info {
+    grid-template-columns: 1fr;
+  }
+
+}

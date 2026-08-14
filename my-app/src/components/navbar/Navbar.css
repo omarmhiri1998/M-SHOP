@@ -312,6 +312,51 @@
     width 0.35s ease,
     opacity 0.3s ease;
 }
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d9aa68;
+
+  color: #5b3d2b;
+
+  font-weight: 600;
+
+  font-size: 16px;
+}
+
+
+.logout-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+}
+
+
+.logout-button:hover {
+  opacity: 0.7;
+}
 
 
 /* opened */

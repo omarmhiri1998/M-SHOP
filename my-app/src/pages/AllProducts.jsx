@@ -1,79 +1,271 @@
-import { useState } from 'react';
-import { cookies } from '../data/cookies';
-import { macarons } from '../data/macarons';
-import { tunisianSweets } from '../data/tunisianSweets';
-import { drinks } from '../data/drinks';
-import { giftingItems } from '../data/gifting';
-import './AllProducts.css';
+import { useState } from "react";
 
-// On fusionne toutes les collections en un seul tableau,
-// en ajoutant un champ "type" pour pouvoir filtrer par famille de produit
+import { cookies } from "../data/cookies";
+import { macarons } from "../data/macarons";
+import { tunisianSweets } from "../data/tunisianSweets";
+import { drinks } from "../data/drinks";
+import { giftingItems } from "../data/gifting";
+
+import useUserStore from "../store/useUserStore";
+
+import "./AllProducts.css";
+
+
+// =========================
+// ALL PRODUCTS
+// =========================
+
 const allProducts = [
-  ...cookies.map((item) => ({ ...item, type: 'Cookies' })),
-  ...macarons.map((item) => ({ ...item, type: 'Macarons' })),
-  ...tunisianSweets.map((item) => ({ ...item, type: 'Tunisian Sweets' })),
-  ...drinks.map((item) => ({ ...item, type: 'Drinks' })),
-  ...giftingItems.map((item) => ({ ...item, type: 'Gifting' })),
+  ...cookies.map((item) => ({
+    ...item,
+    type: "Cookies",
+  })),
+
+  ...macarons.map((item) => ({
+    ...item,
+    type: "Macarons",
+  })),
+
+  ...tunisianSweets.map((item) => ({
+    ...item,
+    type: "Tunisian Sweets",
+  })),
+
+  ...drinks.map((item) => ({
+    ...item,
+    type: "Drinks",
+  })),
+
+  ...giftingItems.map((item) => ({
+    ...item,
+    type: "Gifting",
+  })),
 ];
 
-const filters = ['ALL', 'Cookies', 'Macarons', 'Tunisian Sweets', 'Drinks', 'Gifting'];
+
+const filters = [
+  "ALL",
+  "Cookies",
+  "Macarons",
+  "Tunisian Sweets",
+  "Drinks",
+  "Gifting",
+];
+
 
 function AllProducts() {
-  const [activeFilter, setActiveFilter] = useState('ALL');
+  const [activeFilter, setActiveFilter] =
+    useState("ALL");
+
+
+  // =========================
+  // ZUSTAND
+  // =========================
+
+  const addToCart = useUserStore(
+    (state) => state.addToCart
+  );
+
+  const currentUser = useUserStore(
+    (state) => state.currentUser
+  );
+
+
+  // =========================
+  // FILTER
+  // =========================
 
   const filteredProducts =
-    activeFilter === 'ALL'
+    activeFilter === "ALL"
       ? allProducts
-      : allProducts.filter((p) => p.type === activeFilter);
+      : allProducts.filter(
+          (product) =>
+            product.type === activeFilter
+        );
+
+
+  // =========================
+  // ADD TO CART
+  // =========================
+
+  function handleAdd(product) {
+    if (!currentUser) {
+      alert("Please login first");
+      return;
+    }
+
+
+    const cartProduct = {
+      ...product,
+
+      // unique id
+      id: `${product.type}-${product.id}`,
+
+      // price must always be a number
+      price: Number(product.price),
+    };
+
+
+    addToCart(cartProduct);
+  }
+
 
   return (
     <section className="all-products-page">
+
+      {/* =========================
+          HEADER
+      ========================== */}
+
       <div className="all-products-header">
-        <p className="all-products-label">THE BOUTIQUE</p>
-        <h1 className="all-products-title">All Products</h1>
-        <p className="all-products-intro">
-          Every cookie, macaron, sweet and drink we make, handcrafted in
-          small batches with care.
+
+        <p className="all-products-label">
+          THE BOUTIQUE
         </p>
+
+
+        <h1 className="all-products-title">
+          All Products
+        </h1>
+
+
+        <p className="all-products-intro">
+          Every cookie, macaron, sweet and
+          drink we make, handcrafted in small
+          batches with care.
+        </p>
+
       </div>
 
+
+      {/* =========================
+          FILTERS
+      ========================== */}
+
       <div className="all-products-filters">
+
         {filters.map((filter) => (
+
           <button
             key={filter}
-            className={`filter-btn ${activeFilter === filter ? 'filter-active' : ''}`}
-            onClick={() => setActiveFilter(filter)}
+            className={`filter-btn ${
+              activeFilter === filter
+                ? "filter-active"
+                : ""
+            }`}
+            onClick={() =>
+              setActiveFilter(filter)
+            }
           >
             {filter}
           </button>
+
         ))}
+
       </div>
+
+
+      {/* =========================
+          RESULTS COUNT
+      ========================== */}
 
       <p className="results-count">
-        {filteredProducts.length} product{filteredProducts.length > 1 ? 's' : ''}
+
+        {filteredProducts.length}{" "}
+
+        product
+
+        {filteredProducts.length > 1
+          ? "s"
+          : ""}
+
       </p>
 
+
+      {/* =========================
+          PRODUCTS
+      ========================== */}
+
       <div className="all-products-grid">
+
         {filteredProducts.map((product) => (
-          <div className="all-product-card" key={`${product.type}-${product.id}`}>
+
+          <div
+            className="all-product-card"
+            key={`${product.type}-${product.id}`}
+          >
+
+            {/* IMAGE */}
+
             <div className="all-product-image">
-              <img src={product.image} alt={product.name} />
-              <span className="all-product-type">{product.type}</span>
+
+              <img
+                src={product.image}
+                alt={product.name}
+              />
+
+
+              <span className="all-product-type">
+                {product.type}
+              </span>
+
             </div>
 
-            <p className="all-product-category">{product.category}</p>
-            <h3 className="all-product-name">{product.name}</h3>
-            <p className="all-product-description">{product.description}</p>
+
+            {/* CATEGORY */}
+
+            <p className="all-product-category">
+              {product.category}
+            </p>
+
+
+            {/* NAME */}
+
+            <h3 className="all-product-name">
+              {product.name}
+            </h3>
+
+
+            {/* DESCRIPTION */}
+
+            <p className="all-product-description">
+              {product.description}
+            </p>
+
+
+            {/* PRICE + ADD */}
 
             <div className="all-product-footer">
-              <span className="all-product-price">{product.price} €</span>
-              <button className="all-product-add">ADD</button>
+
+              <span className="all-product-price">
+
+                {Number(
+                  product.price
+                ).toFixed(2)} €
+
+              </span>
+
+
+              <button
+                className="all-product-add"
+                onClick={() =>
+                  handleAdd(product)
+                }
+              >
+                ADD
+              </button>
+
             </div>
+
           </div>
+
         ))}
+
       </div>
+
     </section>
   );
 }
+
 
 export default AllProducts;

@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import "./Main.css";
 import { Link } from "react-router-dom";
+
+import "./Main.css";
 
 import cookie from "../../assets/cookie-dark-chocolate.jpg";
 import mocha from "../../assets/iced-coffee-mocha.jpg";
@@ -10,10 +11,50 @@ import cookiecit from "../../assets/cookie-citron.png";
 import cookiepisfram from "../../assets/cookie-pis-fram.png";
 import macaronfram from "../../assets/macaron-framboise.jpg";
 import macaronstr from "../../assets/cookie-macaron-str.jpg";
-function Main({ onAdd }) {
+
+import useUserStore from "../../store/useUserStore";
+
+
+function Main() {
   const seasonalRef = useRef(null);
 
+
+  // =========================
+  // ZUSTAND
+  // =========================
+
+  const addToCart = useUserStore(
+    (state) => state.addToCart
+  );
+
+  const currentUser = useUserStore(
+    (state) => state.currentUser
+  );
+
+
+  // =========================
+  // ADD PRODUCT
+  // =========================
+
+  function handleAdd(product) {
+    if (!currentUser) {
+      alert("Please login first");
+      return;
+    }
+
+    addToCart(product);
+  }
+
+
+  // =========================
+  // SEASONAL SCROLL
+  // =========================
+
   function scrollSeasonal(direction) {
+    if (!seasonalRef.current) {
+      return;
+    }
+
     if (direction === "left") {
       seasonalRef.current.scrollBy({
         left: -400,
@@ -26,6 +67,7 @@ function Main({ onAdd }) {
       });
     }
   }
+
 
   return (
     <main className="main">
@@ -40,77 +82,109 @@ function Main({ onAdd }) {
           DISCOVER
         </span>
 
-        <h2>Explore our shop</h2>
+        <h2>
+          Explore our shop
+        </h2>
 
         <div className="section-line"></div>
 
+
         <div className="categories-grid">
 
-       
 
+          {/* COOKIES */}
 
           <div className="category-item">
-            <span className="category-number">01</span>
 
-            <h3>Cookies</h3>
+            <span className="category-number">
+              01
+            </span>
+
+            <h3>
+              Cookies
+            </h3>
 
             <p>
               Handmade cookies with soft centers,
               crisp edges and rich flavors.
             </p>
 
-            <Link to="/boutique/cookies" >
-            Explor
-              </Link>
+            <Link to="/boutique/cookies">
+              Explore
+            </Link>
+
           </div>
 
 
-          <div className="category-item">
-            <span className="category-number">02</span>
+          {/* MACARONS */}
 
-            <h3>Macarons</h3>
+          <div className="category-item">
+
+            <span className="category-number">
+              02
+            </span>
+
+            <h3>
+              Macarons
+            </h3>
 
             <p>
               Delicate macarons filled with elegant
               and colorful flavors.
             </p>
 
-            <Link to="/boutique/macarons" >
-                Explor
-              </Link>
+            <Link to="/boutique/macarons">
+              Explore
+            </Link>
+
           </div>
 
 
-          <div className="category-item">
-            <span className="category-number">03</span>
+          {/* TUNISIAN SWEETS */}
 
-            <h3>Tunisian Sweets</h3>
+          <div className="category-item">
+
+            <span className="category-number">
+              03
+            </span>
+
+            <h3>
+              Tunisian Sweets
+            </h3>
 
             <p>
               Traditional recipes inspired by
               authentic Tunisian pastry.
             </p>
 
+            <Link to="/boutique/tunisian-sweets">
+              Explore
+            </Link>
 
-              <Link to="/boutique/tunisian-sweets">
-              Explor
-              </Link>
-
-              
           </div>
-          <div className="category-item">
-            <span className="category-number">04</span>
 
-            <h3>Drinks</h3>
+
+          {/* DRINKS */}
+
+          <div className="category-item">
+
+            <span className="category-number">
+              04
+            </span>
+
+            <h3>
+              Drinks
+            </h3>
 
             <p>
               Refreshing drinks selected to accompany
               your favorite sweets.
             </p>
 
-            <Link to="/boutique/drinks" >
-            Explor
-              </Link>
+            <Link to="/boutique/drinks">
+              Explore
+            </Link>
+
           </div>
 
         </div>
@@ -127,38 +201,56 @@ function Main({ onAdd }) {
         <div className="favorites-header">
 
           <div>
+
             <span className="section-label">
               OUR SELECTION
             </span>
 
-            <h2>Our Favorites</h2>
+            <h2>
+              Our Favorites
+            </h2>
+
           </div>
 
-          <Link to="/boutique" className="view-all">View all products</Link>
+
+          <Link
+            to="/boutique"
+            className="view-all"
+          >
+            View all products
+          </Link>
 
         </div>
 
 
         <div className="products-grid">
 
-          {/* PRODUCT 1 */}
+
+          {/* =========================
+              PRODUCT 1
+          ========================== */}
 
           <article className="product">
 
             <div className="product-image">
+
               <img
                 src={cookie}
                 alt="Double Chocolate Cookie"
               />
+
             </div>
+
 
             <span className="product-category">
               Cookies
             </span>
 
+
             <h3>
               Double Chocolate
             </h3>
+
 
             <div className="product-bottom">
 
@@ -166,9 +258,17 @@ function Main({ onAdd }) {
                 3.50 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 1,
+                    name: "Double Chocolate",
+                    price: 3.5,
+                    image: cookie,
+                  })
+                }
               >
                 Add
               </button>
@@ -178,24 +278,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* PRODUCT 2 */}
+          {/* =========================
+              PRODUCT 2
+          ========================== */}
 
           <article className="product">
 
             <div className="product-image">
+
               <img
                 src={mocha}
                 alt="Iced Coffee Mocha"
               />
+
             </div>
+
 
             <span className="product-category">
               Drinks
             </span>
 
+
             <h3>
               Iced Coffee Mocha
             </h3>
+
 
             <div className="product-bottom">
 
@@ -203,9 +310,17 @@ function Main({ onAdd }) {
                 4.20 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 2,
+                    name: "Iced Coffee Mocha",
+                    price: 4.2,
+                    image: mocha,
+                  })
+                }
               >
                 Add
               </button>
@@ -215,24 +330,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* PRODUCT 3 */}
+          {/* =========================
+              PRODUCT 3
+          ========================== */}
 
           <article className="product">
 
             <div className="product-image">
+
               <img
                 src={macaronv}
                 alt="Vanilla Macaron"
               />
+
             </div>
+
 
             <span className="product-category">
               Macarons
             </span>
 
+
             <h3>
               Vanilla Macaron
             </h3>
+
 
             <div className="product-bottom">
 
@@ -240,9 +362,17 @@ function Main({ onAdd }) {
                 5.00 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 3,
+                    name: "Vanilla Macaron",
+                    price: 5,
+                    image: macaronv,
+                  })
+                }
               >
                 Add
               </button>
@@ -252,24 +382,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* PRODUCT 4 */}
+          {/* =========================
+              PRODUCT 4
+          ========================== */}
 
           <article className="product">
 
             <div className="product-image">
+
               <img
                 src={cookiep}
                 alt="Hazelnut Praline Cookie"
               />
+
             </div>
+
 
             <span className="product-category">
               Cookies
             </span>
 
+
             <h3>
               Hazelnut Praline
             </h3>
+
 
             <div className="product-bottom">
 
@@ -277,9 +414,17 @@ function Main({ onAdd }) {
                 3.00 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 4,
+                    name: "Hazelnut Praline",
+                    price: 3,
+                    image: cookiep,
+                  })
+                }
               >
                 Add
               </button>
@@ -318,15 +463,20 @@ function Main({ onAdd }) {
 
             <button
               className="seasonal-arrow"
-              onClick={() => scrollSeasonal("left")}
+              onClick={() =>
+                scrollSeasonal("left")
+              }
               aria-label="Previous seasonal products"
             >
               ←
             </button>
 
+
             <button
               className="seasonal-arrow"
-              onClick={() => scrollSeasonal("right")}
+              onClick={() =>
+                scrollSeasonal("right")
+              }
               aria-label="Next seasonal products"
             >
               →
@@ -342,24 +492,32 @@ function Main({ onAdd }) {
           ref={seasonalRef}
         >
 
-          {/* SEASONAL 1 */}
+
+          {/* =========================
+              SEASONAL 1
+          ========================== */}
 
           <article className="seasonal-product">
 
             <div className="product-image">
+
               <img
                 src={cookiecit}
                 alt="Lemon Cookie"
               />
+
             </div>
+
 
             <span className="product-category">
               Seasonal
             </span>
 
+
             <h3>
               Lemon Cookie
             </h3>
+
 
             <div className="product-bottom">
 
@@ -367,9 +525,17 @@ function Main({ onAdd }) {
                 4.50 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 5,
+                    name: "Lemon Cookie",
+                    price: 4.5,
+                    image: cookiecit,
+                  })
+                }
               >
                 Add
               </button>
@@ -379,24 +545,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* SEASONAL 2 */}
+          {/* =========================
+              SEASONAL 2
+          ========================== */}
 
           <article className="seasonal-product">
 
             <div className="product-image">
+
               <img
                 src={cookiepisfram}
                 alt="Pistachio Raspberry Cookie"
               />
+
             </div>
+
 
             <span className="product-category">
               Seasonal
             </span>
 
+
             <h3>
               Pistachio Raspberry Cookie
             </h3>
+
 
             <div className="product-bottom">
 
@@ -404,9 +577,17 @@ function Main({ onAdd }) {
                 4.80 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 6,
+                    name: "Pistachio Raspberry Cookie",
+                    price: 4.8,
+                    image: cookiepisfram,
+                  })
+                }
               >
                 Add
               </button>
@@ -416,24 +597,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* SEASONAL 3 */}
+          {/* =========================
+              SEASONAL 3
+          ========================== */}
 
           <article className="seasonal-product">
 
             <div className="product-image">
+
               <img
                 src={macaronv}
                 alt="Vanilla Macaron"
               />
+
             </div>
+
 
             <span className="product-category">
               Seasonal
             </span>
 
+
             <h3>
               Vanilla Macaron
             </h3>
+
 
             <div className="product-bottom">
 
@@ -441,9 +629,17 @@ function Main({ onAdd }) {
                 6.00 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 7,
+                    name: "Vanilla Macaron Seasonal",
+                    price: 6,
+                    image: macaronv,
+                  })
+                }
               >
                 Add
               </button>
@@ -453,33 +649,31 @@ function Main({ onAdd }) {
           </article>
 
 
-     
-
-
-        
-
-
-
-
-
-          {/* SEASONAL 7 */}
+          {/* =========================
+              SEASONAL 7
+          ========================== */}
 
           <article className="seasonal-product">
 
             <div className="product-image">
+
               <img
                 src={macaronfram}
                 alt="Raspberry Macaron"
               />
+
             </div>
+
 
             <span className="product-category">
               Seasonal
             </span>
 
+
             <h3>
               Raspberry Macaron
             </h3>
+
 
             <div className="product-bottom">
 
@@ -487,9 +681,17 @@ function Main({ onAdd }) {
                 5.80 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 11,
+                    name: "Raspberry Macaron",
+                    price: 5.8,
+                    image: macaronfram,
+                  })
+                }
               >
                 Add
               </button>
@@ -499,24 +701,31 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* SEASONAL 8 */}
+          {/* =========================
+              SEASONAL 8
+          ========================== */}
 
           <article className="seasonal-product">
 
             <div className="product-image">
+
               <img
                 src={macaronstr}
                 alt="Strawberry Cookie Macaron"
               />
+
             </div>
+
 
             <span className="product-category">
               Seasonal
             </span>
 
+
             <h3>
               Strawberry Cookie Macaron
             </h3>
+
 
             <div className="product-bottom">
 
@@ -524,9 +733,17 @@ function Main({ onAdd }) {
                 4.00 €
               </span>
 
+
               <button
                 className="add-button"
-                onClick={onAdd}
+                onClick={() =>
+                  handleAdd({
+                    id: 12,
+                    name: "Strawberry Cookie Macaron",
+                    price: 4,
+                    image: macaronstr,
+                  })
+                }
               >
                 Add
               </button>
@@ -550,14 +767,17 @@ function Main({ onAdd }) {
           OUR VALUES
         </span>
 
+
         <h2>
           Made with tradition
         </h2>
+
 
         <div className="section-line"></div>
 
 
         <div className="tradition-grid">
+
 
           <div className="tradition-item">
 
@@ -637,5 +857,6 @@ function Main({ onAdd }) {
     </main>
   );
 }
+
 
 export default Main;
