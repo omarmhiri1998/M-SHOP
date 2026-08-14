@@ -76,14 +76,15 @@
     background-color: #2D2A26;
     color: #FAF6F0;
     border: none;
-    padding: 14px 32px;
+    padding: 14px 50px;
     border-radius: 999px;
     font-size: 13px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     cursor: pointer;
-    align-self: flex-start;
+    align-self: center;
     transition: background 0.3s;
+    
   }
   
   .contact-submit:hover {
