@@ -14,6 +14,7 @@ import Macarons from "./pages/Macarons";
 import TunisianSweets from "./pages/TunisianSweets";
 import Gifting from "./pages/Gifting";
 import Drinks from "./pages/Drinks";
+import AllProducts from "./pages/AllProducts";
 import "./App.css";
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/boutique/tunisian-sweets" element={<TunisianSweets />} />
         <Route path="/gifting" element={<Gifting />} /> 
         <Route path="/boutique/drinks" element={<Drinks />} /> 
+        <Route path="/boutique" element={<AllProducts />} />
       </Routes>
 
 

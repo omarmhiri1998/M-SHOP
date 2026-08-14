@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Link} from "react-router-dom";
 
 function Header() {
   return (
@@ -12,9 +13,8 @@ function Header() {
           Handmade sweets, crafted with passion
         </p>
 
-        <button className="header-button">
-          Shop Now
-        </button>
+        <Link to="/boutique" className="header-content-Link">Shop Now
+          </Link>
 
       </div>
 

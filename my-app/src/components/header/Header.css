@@ -77,22 +77,26 @@
         BUTTON
 ========================= */
 
-.header-button {
-  background: #E8DCC8;
+.header-content-Link {
+  display: inline-block;
+  background: #C9A876;
   color: #2D2A26;
   border: none;
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   padding: 1rem 2.5rem;
   border-radius: 999px;
   text-transform: uppercase;
+  text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.25em;
   cursor: pointer;
-  transition: background 0.3s;
-  
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+.header-content-Link:hover {
+  background: #c5a77e;
+  transform: translateY(-2px);
+  
 
-.header-button:hover {
-  background: #DDD0BC;
 }

@@ -1,11 +1,15 @@
 import { useRef } from "react";
 import "./Main.css";
+import { Link } from "react-router-dom";
 
-import cookie from "../../assets/double.jpg";
-import macaron from "../../assets/makaron.jpg";
-import baklava from "../../assets/baklawa.png";
-import drink from "../../assets/drinks.jpeg";
-
+import cookie from "../../assets/cookie-dark-chocolate.jpg";
+import mocha from "../../assets/iced-coffee-mocha.jpg";
+import macaronv from "../../assets/macaron-vanille.jpg";
+import cookiep from "../../assets/cookie-praline-noisette.jpg";
+import cookiecit from "../../assets/cookie-citron.png";
+import cookiepisfram from "../../assets/cookie-pis-fram.png";
+import macaronfram from "../../assets/macaron-framboise.jpg";
+import macaronstr from "../../assets/cookie-macaron-str.jpg";
 function Main({ onAdd }) {
   const seasonalRef = useRef(null);
 
@@ -55,9 +59,9 @@ function Main({ onAdd }) {
               crisp edges and rich flavors.
             </p>
 
-            <button>
-              Explore
-            </button>
+            <Link to="/boutique/cookies" >
+            Explor
+              </Link>
           </div>
 
 
@@ -71,9 +75,9 @@ function Main({ onAdd }) {
               and colorful flavors.
             </p>
 
-            <button>
-              Explore
-            </button>
+            <Link to="/boutique/macarons" >
+                Explor
+              </Link>
           </div>
 
 
@@ -87,9 +91,12 @@ function Main({ onAdd }) {
               authentic Tunisian pastry.
             </p>
 
-            <button>
-              Explore
-            </button>
+
+              <Link to="/boutique/tunisian-sweets">
+              Explor
+              </Link>
+
+              
           </div>
           <div className="category-item">
             <span className="category-number">04</span>
@@ -101,9 +108,9 @@ function Main({ onAdd }) {
               your favorite sweets.
             </p>
 
-            <button>
-              Explore
-            </button>
+            <Link to="/boutique/drinks" >
+            Explor
+              </Link>
           </div>
 
         </div>
@@ -127,9 +134,7 @@ function Main({ onAdd }) {
             <h2>Our Favorites</h2>
           </div>
 
-          <button className="view-all">
-            View all products
-          </button>
+          <Link to="/boutique" className="view-all">View all products</Link>
 
         </div>
 
@@ -179,17 +184,17 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={macaron}
-                alt="Rose Macaron"
+                src={mocha}
+                alt="Iced Coffee Mocha"
               />
             </div>
 
             <span className="product-category">
-              Macarons
+              Drinks
             </span>
 
             <h3>
-              Rose Macaron
+              Iced Coffee Mocha
             </h3>
 
             <div className="product-bottom">
@@ -216,17 +221,17 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={baklava}
-                alt="Traditional Baklava"
+                src={macaronv}
+                alt="Vanilla Macaron"
               />
             </div>
 
             <span className="product-category">
-              Tunisian Sweets
+              Macarons
             </span>
 
             <h3>
-              Traditional Baklava
+              Vanilla Macaron
             </h3>
 
             <div className="product-bottom">
@@ -253,17 +258,17 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={drink}
-                alt="Fresh Lemonade"
+                src={cookiep}
+                alt="Hazelnut Praline Cookie"
               />
             </div>
 
             <span className="product-category">
-              Drinks
+              Cookies
             </span>
 
             <h3>
-              Fresh Lemonade
+              Hazelnut Praline
             </h3>
 
             <div className="product-bottom">
@@ -343,8 +348,8 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={cookie}
-                alt="Autumn Chocolate Cookie"
+                src={cookiecit}
+                alt="Lemon Cookie"
               />
             </div>
 
@@ -353,7 +358,7 @@ function Main({ onAdd }) {
             </span>
 
             <h3>
-              Autumn Chocolate Cookie
+              Lemon Cookie
             </h3>
 
             <div className="product-bottom">
@@ -380,8 +385,8 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={macaron}
-                alt="Rose Seasonal Macaron"
+                src={cookiepisfram}
+                alt="Pistachio Raspberry Cookie"
               />
             </div>
 
@@ -390,7 +395,7 @@ function Main({ onAdd }) {
             </span>
 
             <h3>
-              Rose Seasonal Macaron
+              Pistachio Raspberry Cookie
             </h3>
 
             <div className="product-bottom">
@@ -417,8 +422,8 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={baklava}
-                alt="Festive Baklava"
+                src={macaronv}
+                alt="Vanilla Macaron"
               />
             </div>
 
@@ -427,7 +432,7 @@ function Main({ onAdd }) {
             </span>
 
             <h3>
-              Festive Baklava
+              Vanilla Macaron
             </h3>
 
             <div className="product-bottom">
@@ -448,115 +453,13 @@ function Main({ onAdd }) {
           </article>
 
 
-          {/* SEASONAL 4 */}
-
-          <article className="seasonal-product">
-
-            <div className="product-image">
-              <img
-                src={drink}
-                alt="Summer Lemonade"
-              />
-            </div>
-
-            <span className="product-category">
-              Seasonal
-            </span>
-
-            <h3>
-              Summer Lemonade
-            </h3>
-
-            <div className="product-bottom">
-
-              <span className="price">
-                3.80 €
-              </span>
-
-              <button
-                className="add-button"
-                onClick={onAdd}
-              >
-                Add
-              </button>
-
-            </div>
-
-          </article>
+     
 
 
-          {/* SEASONAL 5 */}
-
-          <article className="seasonal-product">
-
-            <div className="product-image">
-              <img
-                src={cookie}
-                alt="Winter Cookie"
-              />
-            </div>
-
-            <span className="product-category">
-              Seasonal
-            </span>
-
-            <h3>
-              Winter Cookie
-            </h3>
-
-            <div className="product-bottom">
-
-              <span className="price">
-                4.30 €
-              </span>
-
-              <button
-                className="add-button"
-                onClick={onAdd}
-              >
-                Add
-              </button>
-
-            </div>
-
-          </article>
+        
 
 
-          {/* SEASONAL 6 */}
 
-          <article className="seasonal-product">
-
-            <div className="product-image">
-              <img
-                src={macaron}
-                alt="Pistachio Macaron"
-              />
-            </div>
-
-            <span className="product-category">
-              Seasonal
-            </span>
-
-            <h3>
-              Pistachio Macaron
-            </h3>
-
-            <div className="product-bottom">
-
-              <span className="price">
-                4.90 €
-              </span>
-
-              <button
-                className="add-button"
-                onClick={onAdd}
-              >
-                Add
-              </button>
-
-            </div>
-
-          </article>
 
 
           {/* SEASONAL 7 */}
@@ -565,8 +468,8 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={baklava}
-                alt="Almond Baklava"
+                src={macaronfram}
+                alt="Raspberry Macaron"
               />
             </div>
 
@@ -575,7 +478,7 @@ function Main({ onAdd }) {
             </span>
 
             <h3>
-              Almond Baklava
+              Raspberry Macaron
             </h3>
 
             <div className="product-bottom">
@@ -602,8 +505,8 @@ function Main({ onAdd }) {
 
             <div className="product-image">
               <img
-                src={drink}
-                alt="Orange Blossom Drink"
+                src={macaronstr}
+                alt="Strawberry Cookie Macaron"
               />
             </div>
 
@@ -612,7 +515,7 @@ function Main({ onAdd }) {
             </span>
 
             <h3>
-              Orange Blossom
+              Strawberry Cookie Macaron
             </h3>
 
             <div className="product-bottom">
