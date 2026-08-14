@@ -15,11 +15,10 @@ function Macarons() {
   return (
     <section className="macarons-page">
       <div className="macarons-header">
-        <p className="macarons-label">LA BOUTIQUE</p>
-        <h1 className="macarons-title">Nos Macarons</h1>
+        <p className="macarons-label"> THE BOUTIQUE</p>
+        <h1 className="macarons-title">Our Macarons</h1>
         <p className="macarons-intro">
-          Coque croustillante, cœur fondant — façonnés chaque matin dans
-          notre atelier.
+        Crisp on the outside, irresistibly delicate inside — our handcrafted macarons are made fresh every morning, bringing a little taste of luxury to every bite.
         </p>
       </div>
 

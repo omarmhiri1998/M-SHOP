@@ -16,11 +16,11 @@ function Cookies() {
   return (
     <section className="cookies-page">
       <div className="cookies-header">
-        <p className="cookies-label">LA BOUTIQUE</p>
-        <h1 className="cookies-title">Nos Cookies</h1>
+        <p className="cookies-label">  THE BOUTIQUE</p>
+        <h1 className="cookies-title">Our Cookies</h1>
         <p className="cookies-intro">
-          Façonnés à la main, en petites fournées, avec des ingrédients
-          sélectionnés pour leur qualité.
+        Handcrafted in small batches, using carefully selected
+          ingredients for an exceptional taste.
         </p>
       </div>
 
