@@ -26,6 +26,14 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             "https://api.vercel.com/v9/projects/${{ secrets.VERCEL_PROJECT_ID }}?teamId=${{ secrets.VERCEL_ORG_ID }}"
 
+      - name: Create Vercel Project Link
+        working-directory: my-app
+        run: |
+          rm -rf .vercel
+          mkdir -p .vercel
+          printf '{"orgId":"%s","projectId":"%s","projectName":"m-shop"}' \
+          "$VERCEL_ORG_ID" "$VERCEL_PROJECT_ID" > .vercel/project.json
+
       - name: Pull Vercel Settings
         working-directory: my-app
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
