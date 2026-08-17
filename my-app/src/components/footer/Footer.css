@@ -205,3 +205,235 @@
 .footer-social a:hover {
   color: #b77b52;
 }
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer-top {
+    flex-wrap: wrap;
+    gap: 45px 30px;
+
+    padding: 0 6% 45px;
+  }
+
+  .footer-brand {
+    width: 45%;
+  }
+
+  .footer-newsletter {
+    width: 45%;
+  }
+
+  .footer-section {
+    min-width: 160px;
+  }
+
+  .footer-bottom {
+    padding: 25px 6% 0;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .footer {
+    padding: 50px 0 25px;
+  }
+
+
+  /* TOP */
+
+  .footer-top {
+    flex-direction: column;
+
+    gap: 35px;
+
+    padding: 0 6% 40px;
+  }
+
+
+  /* BRAND */
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* LINKS */
+
+  .footer-section {
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .footer-section h3,
+  .footer-newsletter h3 {
+    font-size: 12px;
+
+    margin-bottom: 7px;
+  }
+
+  .footer-section a {
+    font-size: 13px;
+  }
+
+
+  /* NEWSLETTER */
+
+  .footer-newsletter {
+    width: 100%;
+  }
+
+  .footer-newsletter p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .newsletter-box input {
+    font-size: 16px;
+
+    padding: 12px 16px;
+  }
+
+  .newsletter-box button {
+    padding: 0 20px;
+
+    font-size: 12px;
+  }
+
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 22px 6% 0;
+
+    font-size: 12px;
+  }
+
+  .footer-social {
+    gap: 20px;
+
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .footer-top {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .footer-bottom {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .footer-brand h2 {
+    font-size: 26px;
+  }
+
+
+  /* Newsletter vertically */
+
+  .newsletter-box {
+    flex-direction: column;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+  }
+
+  .newsletter-box input {
+    width: 100%;
+
+    padding: 14px;
+  }
+
+  .newsletter-box button {
+    width: 100%;
+
+    padding: 13px 15px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+  .footer-top {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .footer-bottom {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .footer-brand h2 {
+    font-size: 24px;
+  }
+
+  .footer-social {
+    gap: 15px;
+  }
+}
+
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+
+  .footer-section a:hover {
+    transform: none;
+    color: #8a6d5b;
+  }
+
+  .newsletter-box button:hover {
+    background: #d8ae78;
+  }
+
+  .footer-social a:hover {
+    color: #8a6d5b;
+  }
+}

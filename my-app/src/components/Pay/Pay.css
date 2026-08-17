@@ -45,6 +45,7 @@
   grid-row: 1;
 }
 
+
 .pay-page .pay-products h1 {
   margin: 0 0 30px;
 
@@ -74,6 +75,7 @@
   border-radius: 5px;
 }
 
+
 .pay-page .payment-method h3 {
   margin: 0 0 20px;
 
@@ -83,6 +85,7 @@
   font-weight: 600;
 }
 
+
 .pay-page .payment-options {
   display: flex;
 
@@ -90,6 +93,7 @@
 
   flex-wrap: wrap;
 }
+
 
 .pay-page .payment-option {
   min-width: 125px;
@@ -113,15 +117,18 @@
   transition: 0.2s;
 }
 
+
 .pay-page .payment-option:hover {
   border-color: #d9aa68;
 
   background: #f9eedf;
 }
 
+
 .pay-page .payment-option input {
   display: none;
 }
+
 
 .pay-page .active-payment {
   border-color: #d9aa68;
@@ -129,9 +136,11 @@
   background: #f4e4cc;
 }
 
+
 .pay-page .payment-icon {
   font-size: 18px;
 }
+
 
 .pay-page .paypal-text {
   font-weight: 600;
@@ -159,9 +168,9 @@
 }
 
 
-/* مهم:
-   هذا الآن يؤثر فقط على Pay
-*/
+/* =================================
+   PRODUCT IMAGE
+================================= */
 
 .pay-page .product-image {
   width: 125px;
@@ -176,6 +185,7 @@
   background: #e8d9ca;
 }
 
+
 .pay-page .product-info h3 {
   margin: 0 0 8px;
 
@@ -186,6 +196,7 @@
 
   color: #5b3d2b;
 }
+
 
 .pay-page .product-price {
   margin: 0 0 16px;
@@ -208,6 +219,7 @@
   gap: 12px;
 }
 
+
 .pay-page .quantity button {
   width: 32px;
   height: 32px;
@@ -229,11 +241,13 @@
   transition: 0.2s;
 }
 
+
 .pay-page .quantity button:hover {
   background: #efe5d8;
 
   border-color: #d9aa68;
 }
+
 
 .pay-page .quantity span {
   min-width: 20px;
@@ -267,6 +281,7 @@
 
   text-decoration: underline;
 }
+
 
 .pay-page .delete-button:hover {
   color: #743f30;
@@ -305,6 +320,7 @@
 
   border-radius: 5px;
 }
+
 
 .pay-page .pay-summary h2 {
   margin: 0 0 30px;
@@ -356,11 +372,13 @@
   cursor: pointer;
 }
 
+
 .pay-page .delivery-option input {
   accent-color: #bd8c4f;
 
   cursor: pointer;
 }
+
 
 .pay-page .delivery-option strong {
   display: block;
@@ -370,6 +388,7 @@
   font-size: 14px;
 }
 
+
 .pay-page .delivery-option p {
   margin: 4px 0 0;
 
@@ -377,6 +396,7 @@
 
   font-size: 11px;
 }
+
 
 .pay-page .delivery-option > span {
   color: #5b3d2b;
@@ -416,6 +436,7 @@
   font-size: 23px;
 }
 
+
 .pay-page .summary-total strong {
   font-size: 24px;
 }
@@ -448,6 +469,7 @@
   transition: 0.25s;
 }
 
+
 .pay-page .pay-button:hover {
   background: #bd8c4f;
 
@@ -471,6 +493,7 @@
   border: 1px solid #dfd2c2;
 }
 
+
 .pay-page .empty-cart h3 {
   margin: 0;
 
@@ -485,23 +508,36 @@
 ================================= */
 
 @media (max-width: 950px) {
+
   .pay-page {
     grid-template-columns: 1fr;
 
-    gap: 50px;
+    gap: 45px;
 
-    padding: 100px 7% 70px;
+    padding: 110px 7% 70px;
   }
+
 
   .pay-page .pay-products {
     grid-column: 1;
     grid-row: 1;
   }
 
+
   .pay-page .pay-summary {
     grid-column: 1;
     grid-row: 2;
 
+    width: 100%;
+  }
+
+
+  .pay-page .pay-products h1 {
+    font-size: 40px;
+  }
+
+
+  .pay-page .payment-method {
     width: 100%;
   }
 }
@@ -512,46 +548,377 @@
 ================================= */
 
 @media (max-width: 600px) {
+
   .pay-page {
-    padding: 80px 5% 60px;
+    min-height: 100svh;
+
+    padding: 100px 5% 50px;
 
     gap: 35px;
   }
 
-  .pay-page .pay-products h1 {
-    font-size: 36px;
+
+  /* LOGIN MESSAGE */
+
+  .pay-message {
+    min-height: 100svh;
+
+    padding: 100px 20px 50px;
+
+    text-align: center;
   }
 
-  .pay-page .payment-options {
-    flex-direction: column;
+
+  /* TITLE */
+
+  .pay-page .pay-products h1 {
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
   }
+
+
+  /* PAYMENT */
+
+  .pay-page .payment-method {
+    padding: 20px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .pay-page .payment-method h3 {
+    font-size: 15px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .pay-page .payment-options {
+    gap: 10px;
+  }
+
 
   .pay-page .payment-option {
     width: 100%;
+
+    min-width: 0;
+
+    padding: 13px 14px;
   }
+
+
+  /* PRODUCT */
 
   .pay-page .pay-product {
-    grid-template-columns: 90px 1fr;
+    grid-template-columns:
+      85px minmax(0, 1fr);
 
-    gap: 18px;
+    gap: 16px;
+
+    padding: 22px 0;
   }
+
 
   .pay-page .product-image {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
   }
+
+
+  .pay-page .product-info {
+    min-width: 0;
+  }
+
 
   .pay-page .product-info h3 {
     font-size: 18px;
+
+    line-height: 1.25;
+
+    overflow-wrap: anywhere;
   }
+
+
+  .pay-page .product-price {
+    margin-bottom: 13px;
+
+    font-size: 14px;
+  }
+
+
+  /* QUANTITY */
+
+  .pay-page .quantity {
+    gap: 9px;
+  }
+
+
+  .pay-page .quantity button {
+    width: 30px;
+    height: 30px;
+
+    font-size: 16px;
+  }
+
+
+  .pay-page .delete-button {
+    margin-top: 12px;
+  }
+
+
+  /* PRODUCT TOTAL */
 
   .pay-page .product-total {
     grid-column: 2;
 
-    margin-top: 5px;
+    margin-top: 4px;
+
+    font-size: 17px;
   }
 
+
+  /* SUMMARY */
+
   .pay-page .pay-summary {
-    padding: 25px;
+    padding: 24px 20px;
+  }
+
+
+  .pay-page .pay-summary h2 {
+    font-size: 26px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .pay-page .summary-row {
+    font-size: 14px;
+
+    margin-bottom: 20px;
+  }
+
+
+  /* DELIVERY */
+
+  .pay-page .delivery-option {
+    grid-template-columns:
+      auto minmax(0, 1fr) auto;
+
+    gap: 10px;
+
+    padding: 15px 0;
+  }
+
+
+  .pay-page .delivery-option strong {
+    font-size: 13px;
+  }
+
+
+  .pay-page .delivery-option p {
+    font-size: 10px;
+
+    line-height: 1.4;
+  }
+
+
+  .pay-page .delivery-option > span {
+    font-size: 12px;
+  }
+
+
+  /* TOTAL */
+
+  .pay-page .summary-total {
+    font-size: 20px;
+  }
+
+
+  .pay-page .summary-total strong {
+    font-size: 22px;
+  }
+
+
+  /* PAY BUTTON */
+
+  .pay-page .pay-button {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    font-size: 13px;
+  }
+
+
+  /* EMPTY CART */
+
+  .pay-page .empty-cart {
+    padding: 45px 15px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 420px) {
+
+  .pay-page {
+    padding: 95px 4% 45px;
+  }
+
+
+  .pay-page .pay-products h1 {
+    font-size: 30px;
+  }
+
+
+  /* PRODUCT */
+
+  .pay-page .pay-product {
+    grid-template-columns:
+      75px minmax(0, 1fr);
+
+    gap: 13px;
+  }
+
+
+  .pay-page .product-image {
+    width: 75px;
+    height: 75px;
+  }
+
+
+  .pay-page .product-info h3 {
+    font-size: 16px;
+  }
+
+
+  .pay-page .product-price {
+    font-size: 13px;
+  }
+
+
+  .pay-page .product-total {
+    font-size: 16px;
+  }
+
+
+  /* SUMMARY */
+
+  .pay-page .pay-summary {
+    padding: 20px 16px;
+  }
+
+
+  .pay-page .pay-summary h2 {
+    font-size: 23px;
+  }
+
+
+  .pay-page .summary-total {
+    font-size: 18px;
+  }
+
+
+  .pay-page .summary-total strong {
+    font-size: 20px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .pay-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .pay-page .pay-products h1 {
+    font-size: 27px;
+  }
+
+
+  /* PRODUCT */
+
+  .pay-page .pay-product {
+    grid-template-columns:
+      70px minmax(0, 1fr);
+  }
+
+
+  .pay-page .product-image {
+    width: 70px;
+    height: 70px;
+  }
+
+
+  .pay-page .quantity button {
+    width: 28px;
+    height: 28px;
+  }
+
+
+  /* PAYMENT */
+
+  .pay-page .payment-method {
+    padding: 16px;
+  }
+
+
+  /* DELIVERY */
+
+  .pay-page .delivery-option {
+    grid-template-columns:
+      auto minmax(0, 1fr);
+  }
+
+
+  .pay-page .delivery-option > span {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+}
+
+
+/* =================================
+   TOUCH DEVICES
+================================= */
+
+@media (hover: none) {
+
+  .pay-page .payment-option:hover {
+    border-color: #dfd2c2;
+
+    background: #fffaf4;
+  }
+
+
+  .pay-page .quantity button:hover {
+    background: #fffaf4;
+
+    border-color: #d5c4b3;
+  }
+
+
+  .pay-page .delete-button:hover {
+    color: #9b6554;
+  }
+
+
+  .pay-page .pay-button:hover {
+    background: #d9aa68;
+
+    color: #5b3d2b;
   }
 }

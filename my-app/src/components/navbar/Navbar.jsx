@@ -26,6 +26,16 @@ function Navbar() {
   const [searchOpen, setSearchOpen] =
     useState(false);
 
+  const [
+    mobileMenuOpen,
+    setMobileMenuOpen,
+  ] = useState(false);
+
+  const [
+    mobileBoutiqueOpen,
+    setMobileBoutiqueOpen,
+  ] = useState(false);
+
 
   const categoriesRef = useRef(null);
 
@@ -109,6 +119,36 @@ function Navbar() {
 
 
   // =========================
+  // CLOSE WHEN ROUTE CHANGES
+  // =========================
+
+  useEffect(() => {
+    setCategoriesOpen(false);
+    setSearchOpen(false);
+    setMobileMenuOpen(false);
+    setMobileBoutiqueOpen(false);
+  }, [location.pathname]);
+
+
+  // =========================
+  // LOCK BODY ON MOBILE MENU
+  // =========================
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow =
+        "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+
+  // =========================
   // CATEGORIES
   // =========================
 
@@ -131,14 +171,46 @@ function Navbar() {
     );
 
     setCategoriesOpen(false);
+    setMobileMenuOpen(false);
   }
 
 
-  // Navbar solid:
-  // - إذا لسنا في Home
-  // - أو إذا عمل المستخدم Scroll
+  // =========================
+  // MOBILE MENU
+  // =========================
+
+  function toggleMobileMenu() {
+    setMobileMenuOpen(
+      !mobileMenuOpen
+    );
+
+    setSearchOpen(false);
+    setCategoriesOpen(false);
+  }
+
+
+  function closeMobileMenu() {
+    setMobileMenuOpen(false);
+    setMobileBoutiqueOpen(false);
+  }
+
+
+  function handleLogout() {
+    logoutUser();
+
+    closeMobileMenu();
+  }
+
+
+  // =========================
+  // NAVBAR BACKGROUND
+  // =========================
+
   const showSolid =
-    !isHome || scrolled;
+    !isHome ||
+    scrolled ||
+    mobileMenuOpen ||
+    searchOpen;
 
 
   return (
@@ -151,7 +223,27 @@ function Navbar() {
     >
 
       {/* =========================
-          LEFT
+          MOBILE HAMBURGER
+      ========================== */}
+
+      <button
+        className={`mobile-menu-button ${
+          mobileMenuOpen
+            ? "mobile-menu-button-open"
+            : ""
+        }`}
+        onClick={toggleMobileMenu}
+        aria-label="Menu"
+        aria-expanded={mobileMenuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      {/* =========================
+          DESKTOP LEFT
       ========================== */}
 
       <div className="nav-left">
@@ -188,52 +280,23 @@ function Navbar() {
 
             <div className="categories-menu">
 
-              <Link
-                to="/boutique"
-                onClick={() =>
-                  setCategoriesOpen(false)
-                }
-              >
+              <Link to="/boutique">
                 All Products
               </Link>
 
-
-              <Link
-                to="/boutique/cookies"
-                onClick={() =>
-                  setCategoriesOpen(false)
-                }
-              >
+              <Link to="/boutique/cookies">
                 Cookies
               </Link>
 
-
-              <Link
-                to="/boutique/macarons"
-                onClick={() =>
-                  setCategoriesOpen(false)
-                }
-              >
+              <Link to="/boutique/macarons">
                 Macarons
               </Link>
 
-
-              <Link
-                to="/boutique/tunisian-sweets"
-                onClick={() =>
-                  setCategoriesOpen(false)
-                }
-              >
+              <Link to="/boutique/tunisian-sweets">
                 Tunisian Sweets
               </Link>
 
-
-              <Link
-                to="/boutique/drinks"
-                onClick={() =>
-                  setCategoriesOpen(false)
-                }
-              >
+              <Link to="/boutique/drinks">
                 Drinks
               </Link>
 
@@ -247,7 +310,6 @@ function Navbar() {
         <Link to="/contact">
           Contact
         </Link>
-
 
         <Link to="/gifting">
           Gifting
@@ -263,6 +325,7 @@ function Navbar() {
       <Link
         to="/"
         className="logo"
+        onClick={closeMobileMenu}
       >
         Sweet Surrender
       </Link>
@@ -274,46 +337,44 @@ function Navbar() {
 
       <div className="nav-right">
 
+        {/* DESKTOP USER */}
 
-        {/* =========================
-            LOGIN / USER / LOGOUT
-        ========================== */}
+        <div className="desktop-user-area">
 
-        {!currentUser ? (
+          {!currentUser ? (
 
-          <Link
-            to="/login"
-            className="login"
-          >
-            Login
-          </Link>
+            <Link
+              to="/login"
+              className="login"
+            >
+              Login
+            </Link>
 
-        ) : (
+          ) : (
 
-          <div className="user-area">
+            <div className="user-area">
 
-            <div className="profile-icon">
-              {currentUser.name
-                .charAt(0)
-                .toUpperCase()}
+              <div className="profile-icon">
+                {currentUser.name
+                  .charAt(0)
+                  .toUpperCase()}
+              </div>
+
+              <button
+                className="logout-button"
+                onClick={logoutUser}
+              >
+                Logout
+              </button>
+
             </div>
 
+          )}
 
-            <button
-              className="logout-button"
-              onClick={logoutUser}
-            >
-              Logout
-            </button>
-
-          </div>
-
-        )}
+        </div>
 
 
-        {/* =========================
-            SEARCH
-        ========================== */}
+        {/* SEARCH */}
 
         <div className="search-wrapper">
 
@@ -343,7 +404,6 @@ function Navbar() {
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-
               <circle
                 cx="11"
                 cy="11"
@@ -356,10 +416,159 @@ function Navbar() {
                 x2="21"
                 y2="21"
               />
-
             </svg>
 
           </button>
+
+        </div>
+
+      </div>
+
+
+      {/* =========================
+          MOBILE MENU
+      ========================== */}
+
+      <div
+        className={`mobile-menu ${
+          mobileMenuOpen
+            ? "mobile-menu-open"
+            : ""
+        }`}
+      >
+
+        <Link
+          to="/"
+          onClick={closeMobileMenu}
+        >
+          Home
+        </Link>
+
+
+        {/* MOBILE BOUTIQUE */}
+
+        <button
+          className="mobile-boutique-button"
+          onClick={() =>
+            setMobileBoutiqueOpen(
+              !mobileBoutiqueOpen
+            )
+          }
+        >
+          <span>Boutique</span>
+
+          <span
+            className={`mobile-boutique-arrow ${
+              mobileBoutiqueOpen
+                ? "mobile-boutique-arrow-open"
+                : ""
+            }`}
+          >
+            ▾
+          </span>
+        </button>
+
+
+        {mobileBoutiqueOpen && (
+
+          <div className="mobile-boutique-menu">
+
+            <Link
+              to="/boutique"
+              onClick={closeMobileMenu}
+            >
+              All Products
+            </Link>
+
+            <Link
+              to="/boutique/cookies"
+              onClick={closeMobileMenu}
+            >
+              Cookies
+            </Link>
+
+            <Link
+              to="/boutique/macarons"
+              onClick={closeMobileMenu}
+            >
+              Macarons
+            </Link>
+
+            <Link
+              to="/boutique/tunisian-sweets"
+              onClick={closeMobileMenu}
+            >
+              Tunisian Sweets
+            </Link>
+
+            <Link
+              to="/boutique/drinks"
+              onClick={closeMobileMenu}
+            >
+              Drinks
+            </Link>
+
+          </div>
+
+        )}
+
+
+        <Link
+          to="/gifting"
+          onClick={closeMobileMenu}
+        >
+          Gifting
+        </Link>
+
+
+        <Link
+          to="/contact"
+          onClick={closeMobileMenu}
+        >
+          Contact
+        </Link>
+
+
+        {/* LOGIN / USER */}
+
+        <div className="mobile-account">
+
+          {!currentUser ? (
+
+            <Link
+              to="/login"
+              onClick={closeMobileMenu}
+            >
+              Login
+            </Link>
+
+          ) : (
+
+            <>
+              <div className="mobile-profile">
+
+                <div className="profile-icon">
+                  {currentUser.name
+                    .charAt(0)
+                    .toUpperCase()}
+                </div>
+
+                <span>
+                  {currentUser.name}
+                </span>
+
+              </div>
+
+
+              <button
+                className="mobile-logout"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </>
+
+          )}
 
         </div>
 

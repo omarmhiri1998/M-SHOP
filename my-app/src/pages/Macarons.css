@@ -166,3 +166,213 @@
     background-color: #2D2A26;
     color: #FAF6F0;
   }
+  /* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .macarons-page {
+    padding: 150px 6% 80px;
+  }
+
+  .macarons-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 30px;
+  }
+
+  .macarons-title {
+    font-size: 40px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .macarons-page {
+    padding: 110px 20px 60px;
+  }
+
+
+  /* HEADER */
+
+  .macarons-header {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .macarons-label {
+    font-size: 10px;
+  }
+
+  .macarons-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .macarons-intro {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* FILTERS */
+
+  .macarons-filters {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .macarons-page .filter-btn {
+    padding: 9px 14px;
+    font-size: 10px;
+  }
+
+
+  /* GRID */
+
+  .macarons-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .macaron-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* IMAGE */
+
+  .macaron-image img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1.05;
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* PRODUCT INFO */
+
+  .macaron-category {
+    font-size: 10px;
+  }
+
+  .macaron-name {
+    font-size: 20px;
+  }
+
+  .macaron-description {
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* FOOTER */
+
+  .macaron-footer {
+    gap: 15px;
+  }
+
+  .macaron-price {
+    font-size: 16px;
+  }
+
+  .macaron-add {
+    padding: 9px 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+  .macarons-page {
+    padding: 100px 16px 50px;
+  }
+
+  .macarons-title {
+    font-size: 29px;
+  }
+
+  .macarons-intro {
+    font-size: 13px;
+  }
+
+
+  /* FILTERS */
+
+  .macarons-filters {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 6px;
+
+    margin-bottom: 35px;
+
+    scrollbar-width: none;
+  }
+
+  .macarons-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .macarons-page .filter-btn {
+    flex-shrink: 0;
+  }
+
+
+  /* PRODUCT */
+
+  .macaron-image img {
+    aspect-ratio: 1 / 1.08;
+  }
+
+  .macaron-name {
+    font-size: 19px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .macarons-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .macarons-title {
+    font-size: 27px;
+  }
+
+  .macaron-footer {
+    gap: 10px;
+  }
+
+  .macaron-add {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+}

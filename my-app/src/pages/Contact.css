@@ -90,3 +90,221 @@
   .contact-submit:hover {
     background-color: #6B4E3D;
   }
+ /* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .cookies-page {
+    padding: 150px 6% 80px;
+  }
+
+  .cookies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 30px;
+  }
+
+  .cookies-title {
+    font-size: 42px;
+  }
+
+  .cookie-image img {
+    height: 300px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .cookies-page {
+    padding: 125px 6% 70px;
+  }
+
+
+  /* HEADER */
+
+  .cookies-header {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .cookies-label {
+    font-size: 10px;
+  }
+
+  .cookies-title {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+  }
+
+  .cookies-intro {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* FILTERS */
+
+  .cookies-filters {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .filter-btn {
+    font-size: 10px;
+    padding: 9px 14px;
+  }
+
+
+  /* GRID */
+
+  .cookies-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+
+  /* IMAGE */
+
+  .cookie-image img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1.05;
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* PRODUCT */
+
+  .cookie-category {
+    font-size: 10px;
+  }
+
+  .cookie-name {
+    font-size: 20px;
+  }
+
+  .cookie-description {
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* FOOTER */
+
+  .cookie-footer {
+    gap: 15px;
+  }
+
+  .cookie-price {
+    font-size: 17px;
+  }
+
+  .cookie-add {
+    padding: 9px 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .cookies-page {
+    padding: 115px 5% 60px;
+  }
+
+  .cookies-title {
+    font-size: 30px;
+  }
+
+  .cookies-intro {
+    font-size: 13px;
+  }
+
+
+  /* FILTERS */
+
+  .cookies-filters {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    margin-bottom: 35px;
+
+    scrollbar-width: none;
+  }
+
+  .cookies-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+
+  /* PRODUCT */
+
+  .cookie-image img {
+    aspect-ratio: 1 / 1.1;
+  }
+
+  .cookie-name {
+    font-size: 19px;
+  }
+
+  .cookie-add {
+    padding: 8px 14px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+  .cookies-page {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .cookies-title {
+    font-size: 27px;
+  }
+
+  .cookie-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cookie-price {
+    text-align: center;
+  }
+
+  .cookie-add {
+    width: 100%;
+  }
+}

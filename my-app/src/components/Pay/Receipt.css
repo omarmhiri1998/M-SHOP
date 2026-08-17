@@ -244,26 +244,256 @@
 }
 
 
+/* =========================
+   MOBILE IMPROVEMENTS
+========================= */
+
 @media (max-width: 600px) {
 
   .receipt-page {
-    padding:
-      100px 15px 60px;
-  }
+    min-height: 100svh;
 
+    padding: 100px 15px 55px;
+  }
 
   .receipt-box {
-    padding: 35px 22px;
+    width: 100%;
+
+    padding: 32px 20px;
   }
 
+
+  /* SUCCESS ICON */
+
+  .receipt-success {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 22px;
+
+    font-size: 28px;
+  }
+
+
+  /* HEADER */
+
+  .receipt-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
 
   .receipt-box h1 {
-    font-size: 36px;
+    font-size: 34px;
+    line-height: 1.15;
   }
 
+  .receipt-message {
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 32px;
+  }
+
+
+  /* ORDER INFO */
 
   .receipt-info {
     grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 22px 0;
+
+    margin-bottom: 30px;
   }
 
+  .receipt-info span {
+    font-size: 10px;
+  }
+
+  .receipt-info strong {
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* PRODUCTS */
+
+  .receipt-products {
+    margin-bottom: 25px;
+  }
+
+  .receipt-products h2 {
+    font-size: 23px;
+
+    margin-bottom: 15px;
+  }
+
+  .receipt-product {
+    gap: 15px;
+
+    padding: 13px 0;
+  }
+
+  .receipt-product div {
+    min-width: 0;
+  }
+
+  .receipt-product strong {
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .receipt-product div span {
+    font-size: 11px;
+  }
+
+  .receipt-product > span {
+    flex-shrink: 0;
+
+    font-size: 13px;
+  }
+
+
+  /* PRICES */
+
+  .receipt-prices {
+    margin-bottom: 30px;
+  }
+
+  .receipt-prices > div {
+    gap: 15px;
+
+    font-size: 13px;
+  }
+
+  .receipt-prices .receipt-total {
+    font-size: 18px;
+  }
+
+
+  /* HOME BUTTON */
+
+  .receipt-home {
+    padding: 13px 24px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+
+  .receipt-page {
+    padding: 90px 12px 45px;
+  }
+
+  .receipt-box {
+    padding: 28px 16px;
+  }
+
+  .receipt-success {
+    width: 56px;
+    height: 56px;
+
+    font-size: 25px;
+  }
+
+  .receipt-box h1 {
+    font-size: 30px;
+  }
+
+  .receipt-message {
+    font-size: 13px;
+  }
+
+  .receipt-products h2 {
+    font-size: 21px;
+  }
+
+
+  /* PRODUCT */
+
+  .receipt-product {
+    align-items: flex-start;
+  }
+
+  .receipt-product > span {
+    font-size: 12px;
+  }
+
+
+  /* BUTTON */
+
+  .receipt-home {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 13px 15px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+  .receipt-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .receipt-box {
+    padding: 25px 14px;
+  }
+
+  .receipt-box h1 {
+    font-size: 27px;
+  }
+
+
+  /* Product name + price */
+
+  .receipt-product {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .receipt-product > span {
+    align-self: flex-end;
+  }
+
+
+  /* Total */
+
+  .receipt-prices .receipt-total {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+
+  .receipt-home:hover {
+    background: transparent;
+
+    color: #2d2a26;
+  }
 }

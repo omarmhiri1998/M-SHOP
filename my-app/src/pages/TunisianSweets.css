@@ -165,3 +165,204 @@
     background-color: #2D2A26;
     color: #FAF6F0;
   }
+  /* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .sweets-page {
+    padding: 150px 6% 80px;
+  }
+
+  .sweets-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 30px;
+  }
+
+  .sweets-title {
+    font-size: 40px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .sweets-page {
+    padding: 110px 20px 60px;
+  }
+
+
+  /* HEADER */
+
+  .sweets-header {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .sweets-label {
+    font-size: 10px;
+  }
+
+  .sweets-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .sweets-intro {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* FILTERS */
+
+  .sweets-filters {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .sweets-page .filter-btn {
+    padding: 9px 14px;
+    font-size: 10px;
+  }
+
+
+  /* PRODUCTS */
+
+  .sweets-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .sweet-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sweet-image img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1.05;
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+  }
+
+  .sweet-category {
+    font-size: 10px;
+  }
+
+  .sweet-name {
+    font-size: 20px;
+  }
+
+  .sweet-description {
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+  }
+
+  .sweet-footer {
+    gap: 15px;
+  }
+
+  .sweet-price {
+    font-size: 16px;
+  }
+
+  .sweet-add {
+    padding: 9px 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+  .sweets-page {
+    padding: 100px 16px 50px;
+  }
+
+  .sweets-title {
+    font-size: 29px;
+  }
+
+  .sweets-intro {
+    font-size: 13px;
+  }
+
+
+  /* FILTERS */
+
+  .sweets-filters {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    padding-bottom: 6px;
+
+    margin-bottom: 35px;
+
+    scrollbar-width: none;
+  }
+
+  .sweets-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sweets-page .filter-btn {
+    flex-shrink: 0;
+  }
+
+
+  /* PRODUCT */
+
+  .sweet-image img {
+    aspect-ratio: 1 / 1.08;
+  }
+
+  .sweet-name {
+    font-size: 19px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .sweets-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sweets-title {
+    font-size: 27px;
+  }
+
+  .sweet-footer {
+    gap: 10px;
+  }
+
+  .sweet-add {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+}

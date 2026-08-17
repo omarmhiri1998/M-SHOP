@@ -99,3 +99,136 @@
     color: #2D2A26;
     text-decoration: underline;
   }
+  /* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+  .login-page {
+    max-width: 420px;
+    padding: 150px 24px 80px;
+  }
+
+  .login-title {
+    font-size: 38px;
+  }
+
+  .login-intro {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+
+  .login-page {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 110px 20px 60px;
+  }
+
+
+  /* HEADER */
+
+  .login-label {
+    font-size: 10px;
+  }
+
+  .login-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .login-intro {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+
+  /* FORM */
+
+  .login-form {
+    gap: 20px;
+  }
+
+  .login-page .form-group {
+    gap: 7px;
+  }
+
+  .login-page .form-group label {
+    font-size: 11px;
+  }
+
+  .login-page .form-group input {
+    width: 100%;
+
+    font-size: 16px;
+
+    padding: 12px 14px;
+  }
+
+
+  /* BUTTON */
+
+  .login-submit {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+  }
+
+
+  /* FOOTER */
+
+  .login-footer-text {
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-top: 26px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .login-page {
+    padding: 100px 16px 50px;
+  }
+
+  .login-title {
+    font-size: 28px;
+  }
+
+  .login-intro {
+    font-size: 13px;
+  }
+
+  .login-page .form-group input {
+    padding: 11px 12px;
+  }
+
+  .login-submit {
+    padding: 13px 16px;
+  }
+
+  .login-footer-text {
+    font-size: 12px;
+  }
+}
+  

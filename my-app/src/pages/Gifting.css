@@ -131,3 +131,175 @@
     background-color: #2D2A26;
     color: #FAF6F0;
   }
+  /* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .gifting-page {
+    padding: 150px 6% 80px;
+  }
+
+  .gifting-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px 30px;
+  }
+
+  .gifting-title {
+    font-size: 40px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .gifting-page {
+    padding: 110px 20px 60px;
+  }
+
+
+  /* HEADER */
+
+  .gifting-header {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .gifting-label {
+    font-size: 10px;
+  }
+
+  .gifting-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .gifting-intro {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  /* GRID */
+
+  .gifting-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+
+  /* CARD */
+
+  .gift-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* IMAGE */
+
+  .gift-image img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1.05;
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* INFO */
+
+  .gift-category {
+    font-size: 10px;
+  }
+
+  .gift-name {
+    font-size: 20px;
+  }
+
+  .gift-description {
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* FOOTER */
+
+  .gift-footer {
+    gap: 15px;
+  }
+
+  .gift-price {
+    font-size: 16px;
+  }
+
+  .gift-add {
+    padding: 9px 16px;
+    font-size: 10px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+  .gifting-page {
+    padding: 100px 16px 50px;
+  }
+
+  .gifting-title {
+    font-size: 29px;
+  }
+
+  .gifting-intro {
+    font-size: 13px;
+  }
+
+  .gift-image img {
+    aspect-ratio: 1 / 1.08;
+  }
+
+  .gift-name {
+    font-size: 19px;
+  }
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .gifting-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .gifting-title {
+    font-size: 27px;
+  }
+
+  .gift-footer {
+    gap: 10px;
+  }
+
+  .gift-add {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+}
