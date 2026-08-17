@@ -14,20 +14,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
+      - name: Test Vercel Access
+        run: |
+          curl --fail \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            "https://api.vercel.com/v9/projects/${{ secrets.VERCEL_PROJECT_ID }}?teamId=${{ secrets.VERCEL_ORG_ID }}"
+
       - name: Pull Vercel Settings
         working-directory: my-app
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build
+      - name: Build Project
         working-directory: my-app
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy
+      - name: Deploy to Vercel
         working-directory: my-app
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
